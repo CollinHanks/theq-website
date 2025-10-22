@@ -73,12 +73,12 @@ export default function Footer() {
             <div className="space-y-2 mb-4">
               <div className="flex items-start gap-2 text-sm text-neutral-300">
                 <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0 text-brand-lilac" />
-                <span>Istanbul, Türkiye</span>
+                <span>Bomonti, Istanbul, 34000, Türkiye</span>
               </div>
               <div className="flex items-start gap-2 text-sm text-neutral-300">
                 <Mail className="w-4 h-4 mt-0.5 flex-shrink-0 text-brand-lilac" />
                 <Link href="mailto:info@theqatelier.com" className="hover:text-brand-lilac transition-colors">
-                  info@theqatelier.com
+                  hello@theqatelier.com
                 </Link>
               </div>
               <div className="flex items-start gap-2 text-sm text-neutral-300">
