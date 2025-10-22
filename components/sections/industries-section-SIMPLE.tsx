@@ -47,13 +47,13 @@ const industries = [
     name: 'Private Yachts',
     slug: 'private-yachts',
     description: 'Luxury marine textiles for superyachts and private vessels',
-    color: 'bg-neutral-100 hover:bg-neutral-200'
+    color: 'bg-brand-lilac-light hover:bg-brand-lilac'
   }
 ]
 
 export default function IndustriesSection() {
   return (
-    <section className="py-20 bg-brand-cream">
+    <section className="py-20 bg-brand-cream" id="industries">
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -65,13 +65,13 @@ export default function IndustriesSection() {
           </p>
         </div>
 
-        {/* Industries Grid */}
+        {/* Industries Grid - NOW CLICKABLE! */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {industries.map((industry) => (
             <Link
               key={industry.slug}
               href={`/industries/${industry.slug}`}
-              className={`${industry.color} p-8 rounded-lg transition-all duration-300 group hover:shadow-lg border border-neutral-200`}
+              className={`${industry.color} p-8 rounded-lg transition-all duration-300 group hover:shadow-lg border border-neutral-200 block cursor-pointer`}
             >
               <div className="text-center">
                 <h3 className="font-semibold text-xl mb-3 text-brand-charcoal group-hover:text-brand-lilac-dark transition-colors">
@@ -88,5 +88,3 @@ export default function IndustriesSection() {
     </section>
   )
 }
-
-export { industries }
