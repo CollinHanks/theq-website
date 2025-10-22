@@ -54,29 +54,46 @@ export default function Home() {
             From intimate boutique hotels to grand luxury resorts, our collections embody sophistication and durability.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Bedding Collection Card */}
             <div className="group cursor-pointer">
-              <div className="aspect-[4/5] bg-gradient-to-b from-neutral-200 to-neutral-300 rounded-subtle overflow-hidden mb-4">
-                <div className="w-full h-full flex items-center justify-center text-neutral-500">
-                  [Luxury Bedding Collection]
-                </div>
+              <div className="aspect-[4/5] relative rounded-subtle overflow-hidden mb-4 bg-neutral-200">
+                <Image 
+                  src="/images/bedding-collection.jpg"
+                  alt="Luxury bedding collection with Egyptian cotton sheets and plush duvets"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
               </div>
               <h3 className="font-playfair text-2xl mb-2 group-hover:text-brand-lilac transition-colors">Bedding Excellence</h3>
               <p className="text-brand-stone">Egyptian cotton sheets, plush duvets, and elegant pillowcases crafted for ultimate comfort.</p>
             </div>
+
+            {/* Restaurant Uniforms Card */}
             <div className="group cursor-pointer">
-              <div className="aspect-[4/5] bg-gradient-to-b from-neutral-200 to-neutral-300 rounded-subtle overflow-hidden mb-4">
-                <div className="w-full h-full flex items-center justify-center text-neutral-500">
-                  [Restaurant Uniforms]
-                </div>
+              <div className="aspect-[4/5] relative rounded-subtle overflow-hidden mb-4 bg-neutral-200">
+                <Image 
+                  src="/images/restaurant-uniforms.jpg"
+                  alt="Professional restaurant uniforms and hospitality attire"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
               </div>
               <h3 className="font-playfair text-2xl mb-2 group-hover:text-brand-lilac transition-colors">Professional Attire</h3>
               <p className="text-brand-stone">Bespoke uniforms that blend functionality with sophisticated design for hospitality teams.</p>
             </div>
+
+            {/* Spa & Wellness Card */}
             <div className="group cursor-pointer">
-              <div className="aspect-[4/5] bg-gradient-to-b from-neutral-200 to-neutral-300 rounded-subtle overflow-hidden mb-4">
-                <div className="w-full h-full flex items-center justify-center text-neutral-500">
-                  [Spa & Wellness Textiles]
-                </div>
+              <div className="aspect-[4/5] relative rounded-subtle overflow-hidden mb-4 bg-neutral-200">
+                <Image 
+                  src="/images/spa-wellness.jpg"
+                  alt="Luxury spa robes, premium towels and wellness textiles"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
               </div>
               <h3 className="font-playfair text-2xl mb-2 group-hover:text-brand-lilac transition-colors">Spa & Wellness</h3>
               <p className="text-brand-stone">Luxurious robes, premium towels, and serene textile solutions for wellness sanctuaries.</p>
