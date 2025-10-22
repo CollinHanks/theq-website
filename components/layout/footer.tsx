@@ -1,17 +1,28 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Footer() {
   return (
     <footer className="bg-brand-charcoal text-white py-16 mt-20">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {/* Logo & Description */}
           <div>
-            <h3 className="font-playfair text-2xl mb-4">The Q</h3>
+            {/* Logo - White Version */}
+            <div className="relative h-10 w-40 mb-4">
+              <Image
+                src="/images/logo-white.png"
+                alt="The Q - Premium Hospitality Textiles"
+                fill
+                className="object-contain object-left"
+              />
+            </div>
             <p className="text-sm text-neutral-300">
               Signature textiles for exceptional hospitality. 7+ years of excellence, 200+ global clients.
             </p>
           </div>
           
+          {/* Products */}
           <div>
             <h4 className="font-semibold mb-4">Products</h4>
             <ul className="space-y-2 text-sm text-neutral-300">
@@ -21,6 +32,7 @@ export default function Footer() {
             </ul>
           </div>
           
+          {/* Company */}
           <div>
             <h4 className="font-semibold mb-4">Company</h4>
             <ul className="space-y-2 text-sm text-neutral-300">
@@ -31,6 +43,7 @@ export default function Footer() {
             </ul>
           </div>
           
+          {/* Connect */}
           <div>
             <h4 className="font-semibold mb-4">Connect</h4>
             <ul className="space-y-2 text-sm text-neutral-300">

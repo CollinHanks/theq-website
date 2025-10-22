@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { Menu, X } from 'lucide-react'
 import { useState, useEffect } from 'react'
 
@@ -26,8 +27,15 @@ export default function Header() {
       <header className="sticky top-0 z-50 bg-brand-cream/95 backdrop-blur-sm border-b border-neutral-200">
         <div className="container mx-auto px-6">
           <nav className="flex items-center justify-between h-20">
-            <Link href="/" className="font-playfair text-2xl text-brand-charcoal" onClick={closeMenu}>
-              The Q
+            {/* Logo - Black Version */}
+            <Link href="/" className="relative h-8 w-32" onClick={closeMenu}>
+              <Image
+                src="/images/logo-black.png"
+                alt="The Q - Premium Hospitality Textiles"
+                fill
+                className="object-contain"
+                priority
+              />
             </Link>
             
             {/* Desktop Menu */}
