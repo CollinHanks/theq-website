@@ -3,6 +3,7 @@ import { playfair, inter } from '@/lib/fonts'
 import './globals.css'
 import Header from '@/components/layout/header'
 import Footer from '@/components/layout/footer'
+import BackToTop from '@/components/ui/back-to-top'
 
 export const metadata: Metadata = {
   // Basic Metadata
@@ -115,8 +116,6 @@ export const metadata: Metadata = {
   // Verification (Add your actual verification codes)
   verification: {
     google: 'your-google-site-verification-code',
-    // yandex: 'your-yandex-verification-code',
-    // bing: 'your-bing-verification-code',
   },
   
   // Category
@@ -139,6 +138,7 @@ export default function RootLayout({
         <Header />
         <main className="min-h-screen">{children}</main>
         <Footer />
+        <BackToTop />
       </body>
     </html>
   )

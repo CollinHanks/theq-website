@@ -8,8 +8,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo & Description */}
           <div>
-            {/* Logo - White Version - LARGER SIZE */}
-            <div className="relative h-16 w-56 mb-6">
+            {/* Logo - White Version - SAME SIZE AS HEADER */}
+            <div className="relative h-10 w-36 mb-6">
               <Image
                 src="/images/logo-white.png"
                 alt="The Q - Premium Hospitality Textiles"

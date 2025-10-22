@@ -11,9 +11,9 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          lilac: "#B469FF",           // Yeni ana lila (Canva'dan)
-          "lilac-light": "#D4B5FF",   // Açık versiyonu
-          "lilac-dark": "#9747FF",    // Koyu versiyonu
+          lilac: "#B469FF",           // Updated to Canva color
+          "lilac-light": "#D4B5FF",
+          "lilac-dark": "#9747FF",
           charcoal: "#2C2C2C",
           cream: "#FAF8F5",
           stone: "#8B8680",
@@ -47,6 +47,21 @@ const config: Config = {
       },
       borderRadius: {
         subtle: "0.125rem",
+      },
+      // Back to Top button animations
+      keyframes: {
+        'fade-in': {
+          '0%': { opacity: '0', transform: 'translateY(10px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        'fade-out': {
+          '0%': { opacity: '1', transform: 'translateY(0)' },
+          '100%': { opacity: '0', transform: 'translateY(10px)' },
+        },
+      },
+      animation: {
+        'fade-in': 'fade-in 0.3s ease-out',
+        'fade-out': 'fade-out 0.3s ease-out',
       },
     },
   },
