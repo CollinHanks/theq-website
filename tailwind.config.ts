@@ -11,9 +11,9 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          lilac: "#C8A8D8",
-          "lilac-light": "#E0D4E8",
-          "lilac-dark": "#9B7BAB",
+          lilac: "#B469FF",           // Yeni ana lila (Canva'dan)
+          "lilac-light": "#D4B5FF",   // Açık versiyonu
+          "lilac-dark": "#9747FF",    // Koyu versiyonu
           charcoal: "#2C2C2C",
           cream: "#FAF8F5",
           stone: "#8B8680",
