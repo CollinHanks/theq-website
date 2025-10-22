@@ -27,8 +27,8 @@ export default function Header() {
       <header className="sticky top-0 z-50 bg-brand-cream/95 backdrop-blur-sm border-b border-neutral-200">
         <div className="container mx-auto px-6">
           <nav className="flex items-center justify-between h-20">
-            {/* Logo - Black Version - BALANCED SIZE */}
-            <Link href="/" className="relative h-10 w-36" onClick={closeMenu}>
+            {/* Logo - Black Version - SLIGHTLY LARGER */}
+            <Link href="/" className="relative h-12 w-44" onClick={closeMenu}>
               <Image
                 src="/images/logo-black.png"
                 alt="The Q - Premium Hospitality Textiles"
