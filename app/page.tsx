@@ -4,7 +4,7 @@ import Link from 'next/link'
 export default function Home() {
   return (
     <div>
-      {/* Hero Section with Banner */}
+      {/* Hero Section - FIXED VERSION */}
       <section className="h-[90vh] relative flex items-center justify-center overflow-hidden">
         {/* Background Image Layer */}
         <div className="absolute inset-0 z-0">
@@ -14,41 +14,51 @@ export default function Home() {
             fill
             priority
             quality={90}
-            className="object-cover scale-105"
+            className="object-cover"
             sizes="100vw"
           />
         </div>
 
-        {/* Multi-layer Gradient Overlay for readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-brand-cream/85 via-brand-lilac-light/35 to-brand-cream/90 z-[1]"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent z-[2]"></div>
-
-        {/* Vignette Effect (edges darker) */}
-        <div className="absolute inset-0 bg-radial-vignette z-[3]"></div>
+        {/* Dark Overlay for Contrast - Simple & Clean */}
+        <div className="absolute inset-0 bg-black/40 z-[1]"></div>
 
         {/* Content */}
         <div className="relative text-center max-w-5xl px-6 z-10">
-          <h1 className="font-playfair text-5xl md:text-display-lg mb-6 text-brand-charcoal leading-tight drop-shadow-sm">
+          {/* Heading - Pure White with Shadow */}
+          <h1 className="font-playfair text-5xl md:text-display-lg mb-6 text-white leading-tight" style={{textShadow: '0 2px 8px rgba(0,0,0,0.3)'}}>
             Signature textiles for<br />exceptional hospitality
           </h1>
-          <p className="text-xl md:text-2xl text-brand-stone mb-10 max-w-3xl mx-auto drop-shadow-sm">
+          
+          {/* Subheading - Pure White with Shadow */}
+          <p className="text-xl md:text-2xl text-white mb-10 max-w-3xl mx-auto" style={{textShadow: '0 1px 4px rgba(0,0,0,0.3)'}}>
             Where Turkish craftsmanship meets contemporary luxury. 
             Elevating spaces through timeless textile excellence since 2018.
           </p>
+          
+          {/* CTA Buttons - Consistent Style */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/collections" className="bg-brand-lilac text-white px-10 py-4 rounded-subtle hover:bg-brand-lilac-dark transition-all duration-300 text-lg font-medium shadow-lg hover:shadow-xl hover:scale-105">
+            <Link 
+              href="/collections" 
+              className="bg-brand-lilac text-white px-10 py-4 rounded-subtle hover:bg-brand-lilac-dark transition-all duration-300 text-lg font-medium shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+            >
               Explore Collections
             </Link>
-            <Link href="/contact" className="border-2 border-brand-charcoal text-brand-charcoal bg-white/80 backdrop-blur-sm px-10 py-4 rounded-subtle hover:bg-brand-charcoal hover:text-white transition-all duration-300 text-lg font-medium shadow-lg hover:shadow-xl hover:scale-105">
+            <Link 
+              href="/contact" 
+              className="border-2 border-white text-white px-10 py-4 rounded-subtle hover:bg-white hover:text-brand-charcoal transition-all duration-300 text-lg font-medium shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+            >
               Request Samples
             </Link>
           </div>
         </div>
 
-        {/* Scroll Indicator (optional - looks professional) */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
-          <div className="w-6 h-10 border-2 border-brand-charcoal/30 rounded-full flex justify-center">
-            <div className="w-1.5 h-3 bg-brand-charcoal/30 rounded-full mt-2"></div>
+        {/* Scroll Indicator - Bottom Right Corner */}
+        <div className="absolute bottom-12 right-8 z-10 opacity-40 hover:opacity-80 transition-opacity">
+          <div className="flex flex-col items-center gap-2">
+            <span className="text-white text-xs uppercase tracking-wider">Scroll</span>
+            <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center animate-bounce">
+              <div className="w-1.5 h-3 bg-white rounded-full mt-2"></div>
+            </div>
           </div>
         </div>
       </section>
