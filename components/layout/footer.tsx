@@ -8,8 +8,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo & Description */}
           <div>
-            {/* Logo - White Version */}
-            <div className="relative h-10 w-40 mb-4">
+            {/* Logo - White Version - LARGER SIZE */}
+            <div className="relative h-16 w-56 mb-6">
               <Image
                 src="/images/logo-white.png"
                 alt="The Q - Premium Hospitality Textiles"
@@ -17,14 +17,14 @@ export default function Footer() {
                 className="object-contain object-left"
               />
             </div>
-            <p className="text-sm text-neutral-300">
+            <p className="text-sm text-neutral-300 leading-relaxed">
               Signature textiles for exceptional hospitality. 7+ years of excellence, 200+ global clients.
             </p>
           </div>
           
           {/* Products */}
           <div>
-            <h4 className="font-semibold mb-4">Products</h4>
+            <h4 className="font-semibold mb-4 text-lg">Products</h4>
             <ul className="space-y-2 text-sm text-neutral-300">
               <li><Link href="/collections" className="hover:text-brand-lilac transition-colors">Collections</Link></li>
               <li><Link href="/industries" className="hover:text-brand-lilac transition-colors">Industries</Link></li>
@@ -34,7 +34,7 @@ export default function Footer() {
           
           {/* Company */}
           <div>
-            <h4 className="font-semibold mb-4">Company</h4>
+            <h4 className="font-semibold mb-4 text-lg">Company</h4>
             <ul className="space-y-2 text-sm text-neutral-300">
               <li><Link href="/about" className="hover:text-brand-lilac transition-colors">About</Link></li>
               <li><Link href="/atelier" className="hover:text-brand-lilac transition-colors">Atelier</Link></li>
@@ -45,7 +45,7 @@ export default function Footer() {
           
           {/* Connect */}
           <div>
-            <h4 className="font-semibold mb-4">Connect</h4>
+            <h4 className="font-semibold mb-4 text-lg">Connect</h4>
             <ul className="space-y-2 text-sm text-neutral-300">
               <li><Link href="/contact" className="hover:text-brand-lilac transition-colors">Contact</Link></li>
               <li><Link href="/inspirations" className="hover:text-brand-lilac transition-colors">Inspirations</Link></li>
