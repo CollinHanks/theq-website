@@ -23,13 +23,13 @@ export default function AboutPage() {
       <section className="py-20">
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            {/* Image */}
-            <div className="relative h-[500px] rounded-lg overflow-hidden shadow-xl">
+            {/* Image - FIXED: object-contain instead of object-cover */}
+            <div className="relative h-[500px] rounded-lg overflow-hidden shadow-xl bg-neutral-100">
               <Image
                 src="/images/about-workshop.jpg"
                 alt="The Q atelier workshop in Istanbul"
                 fill
-                className="object-cover"
+                className="object-contain"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
@@ -77,13 +77,13 @@ export default function AboutPage() {
               </div>
             </div>
 
-            {/* Image - Right Side */}
-            <div className="relative h-[500px] rounded-lg overflow-hidden shadow-xl">
+            {/* Image - FIXED: object-contain instead of object-cover */}
+            <div className="relative h-[500px] rounded-lg overflow-hidden shadow-xl bg-neutral-100">
               <Image
                 src="/images/about-craftsmanship.jpg"
                 alt="Artisan craftsmanship at The Q"
                 fill
-                className="object-cover"
+                className="object-contain"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
@@ -203,23 +203,23 @@ export default function AboutPage() {
               </div>
             </div>
 
-            {/* Image Grid */}
+            {/* Image Grid - FIXED: object-contain */}
             <div className="grid md:grid-cols-2 gap-6 mb-12">
-              <div className="relative h-64 rounded-lg overflow-hidden shadow-lg">
+              <div className="relative h-64 rounded-lg overflow-hidden shadow-lg bg-neutral-100">
                 <Image
                   src="/images/team-workshop.jpg"
                   alt="Our artisans at work"
                   fill
-                  className="object-cover"
+                  className="object-contain"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
-              <div className="relative h-64 rounded-lg overflow-hidden shadow-lg">
+              <div className="relative h-64 rounded-lg overflow-hidden shadow-lg bg-neutral-100">
                 <Image
                   src="/images/team-design.jpg"
                   alt="Design team collaboration"
                   fill
-                  className="object-cover"
+                  className="object-contain"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
