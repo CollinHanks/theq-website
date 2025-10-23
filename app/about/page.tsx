@@ -6,13 +6,13 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-b from-brand-cream to-white">
-        <div className="container mx-auto px-6">
+      <section className="py-12 md:py-20 bg-gradient-to-b from-brand-cream to-white">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="font-playfair text-5xl md:text-6xl mb-6 text-brand-charcoal">
+            <h1 className="font-playfair text-4xl md:text-5xl lg:text-6xl mb-4 md:mb-6 text-brand-charcoal">
               Our Story
             </h1>
-            <p className="text-xl text-brand-stone leading-relaxed">
+            <p className="text-lg md:text-xl text-brand-stone leading-relaxed">
               Where Turkish heritage meets contemporary luxury. The Q represents a new generation of textile excellence, built on 27 years of founders' expertise and a passion for exceptional craftsmanship.
             </p>
           </div>
@@ -20,27 +20,27 @@ export default function AboutPage() {
       </section>
 
       {/* Image + Story Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            {/* Image - FIXED: proper aspect ratio with object-cover */}
-            <div className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-xl">
+      <section className="py-12 md:py-20">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
+            {/* Image - SMART SIZING */}
+            <div className="relative w-full h-[300px] md:h-[400px] lg:h-[500px] rounded-lg overflow-hidden shadow-xl">
               <Image
                 src="/images/about-workshop.jpg"
                 alt="The Q atelier workshop in Istanbul"
                 fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover object-center scale-100"
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
                 priority
               />
             </div>
 
             {/* Content */}
-            <div>
-              <h2 className="font-playfair text-4xl mb-6 text-brand-charcoal">
+            <div className="space-y-4 md:space-y-6">
+              <h2 className="font-playfair text-3xl md:text-4xl text-brand-charcoal">
                 Heritage & Innovation
               </h2>
-              <div className="space-y-4 text-brand-stone leading-relaxed">
+              <div className="space-y-4 text-brand-stone leading-relaxed text-base md:text-lg">
                 <p>
                   Founded in 2018 in the heart of Istanbul, The Q emerged from a vision to revolutionize hospitality textiles. Our founders, with their combined 27 years of experience in the textile industry, recognized a gap in the market for truly bespoke, luxury textiles that could withstand the demands of high-end hospitality while maintaining elegance.
                 </p>
@@ -57,15 +57,15 @@ export default function AboutPage() {
       </section>
 
       {/* Philosophy Section with Image */}
-      <section className="py-20 bg-brand-cream">
-        <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+      <section className="py-12 md:py-20 bg-brand-cream">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
             {/* Content - Left Side */}
-            <div>
-              <h2 className="font-playfair text-4xl mb-6 text-brand-charcoal">
+            <div className="space-y-4 md:space-y-6 order-2 lg:order-1">
+              <h2 className="font-playfair text-3xl md:text-4xl text-brand-charcoal">
                 Our Philosophy
               </h2>
-              <div className="space-y-4 text-brand-stone leading-relaxed mb-8">
+              <div className="space-y-4 text-brand-stone leading-relaxed text-base md:text-lg">
                 <p>
                   At The Q, we believe textiles are more than functional items – they're the silent ambassadors of your brand, the first touch your guests experience, and the lasting impression they take home.
                 </p>
@@ -78,14 +78,14 @@ export default function AboutPage() {
               </div>
             </div>
 
-            {/* Image - FIXED: proper aspect ratio */}
-            <div className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-xl">
+            {/* Image - SMART SIZING */}
+            <div className="relative w-full h-[300px] md:h-[400px] lg:h-[500px] rounded-lg overflow-hidden shadow-xl order-1 lg:order-2">
               <Image
                 src="/images/about-craftsmanship.jpg"
                 alt="Artisan craftsmanship at The Q"
                 fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover object-center scale-100"
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
               />
             </div>
           </div>
@@ -93,60 +93,60 @@ export default function AboutPage() {
       </section>
 
       {/* Values Section - BRAND COLORS ONLY */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-6">
-          <h2 className="font-playfair text-4xl text-center mb-16 text-brand-charcoal">
+      <section className="py-12 md:py-20 bg-white">
+        <div className="container mx-auto px-4 md:px-6">
+          <h2 className="font-playfair text-3xl md:text-4xl text-center mb-8 md:mb-16 text-brand-charcoal">
             Our Values
           </h2>
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {/* Quality First - Purple */}
             <div className="text-center group">
-              <div className="w-20 h-20 mx-auto mb-6 bg-brand-lilac rounded-2xl flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                <Award className="w-10 h-10 text-white" />
+              <div className="w-16 h-16 md:w-20 md:h-20 mx-auto mb-4 md:mb-6 bg-brand-lilac rounded-2xl flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                <Award className="w-8 h-8 md:w-10 md:h-10 text-white" />
               </div>
-              <h3 className="font-semibold text-xl mb-3 text-brand-charcoal">
+              <h3 className="font-semibold text-lg md:text-xl mb-2 md:mb-3 text-brand-charcoal">
                 Quality First
               </h3>
-              <p className="text-brand-stone">
+              <p className="text-sm md:text-base text-brand-stone px-2">
                 Every product undergoes rigorous quality control to ensure perfection.
               </p>
             </div>
 
             {/* Sustainable Practice - Dark Purple */}
             <div className="text-center group">
-              <div className="w-20 h-20 mx-auto mb-6 bg-brand-lilac-dark rounded-2xl flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                <Leaf className="w-10 h-10 text-white" />
+              <div className="w-16 h-16 md:w-20 md:h-20 mx-auto mb-4 md:mb-6 bg-brand-lilac-dark rounded-2xl flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                <Leaf className="w-8 h-8 md:w-10 md:h-10 text-white" />
               </div>
-              <h3 className="font-semibold text-xl mb-3 text-brand-charcoal">
+              <h3 className="font-semibold text-lg md:text-xl mb-2 md:mb-3 text-brand-charcoal">
                 Sustainable Practice
               </h3>
-              <p className="text-brand-stone">
+              <p className="text-sm md:text-base text-brand-stone px-2">
                 Committed to eco-friendly materials and responsible production methods.
               </p>
             </div>
 
             {/* Bespoke Design - Charcoal */}
             <div className="text-center group">
-              <div className="w-20 h-20 mx-auto mb-6 bg-brand-charcoal rounded-2xl flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                <Palette className="w-10 h-10 text-white" />
+              <div className="w-16 h-16 md:w-20 md:h-20 mx-auto mb-4 md:mb-6 bg-brand-charcoal rounded-2xl flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                <Palette className="w-8 h-8 md:w-10 md:h-10 text-white" />
               </div>
-              <h3 className="font-semibold text-xl mb-3 text-brand-charcoal">
+              <h3 className="font-semibold text-lg md:text-xl mb-2 md:mb-3 text-brand-charcoal">
                 Bespoke Design
               </h3>
-              <p className="text-brand-stone">
+              <p className="text-sm md:text-base text-brand-stone px-2">
                 Tailored solutions that reflect your brand's unique identity.
               </p>
             </div>
 
             {/* Timeless Elegance - Light Purple */}
             <div className="text-center group">
-              <div className="w-20 h-20 mx-auto mb-6 bg-brand-lilac-light rounded-2xl flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                <Clock className="w-10 h-10 text-brand-lilac-dark" />
+              <div className="w-16 h-16 md:w-20 md:h-20 mx-auto mb-4 md:mb-6 bg-brand-lilac-light rounded-2xl flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                <Clock className="w-8 h-8 md:w-10 md:h-10 text-brand-lilac-dark" />
               </div>
-              <h3 className="font-semibold text-xl mb-3 text-brand-charcoal">
+              <h3 className="font-semibold text-lg md:text-xl mb-2 md:mb-3 text-brand-charcoal">
                 Timeless Elegance
               </h3>
-              <p className="text-brand-stone">
+              <p className="text-sm md:text-base text-brand-stone px-2">
                 Designs that transcend trends and stand the test of time.
               </p>
             </div>
@@ -155,72 +155,72 @@ export default function AboutPage() {
       </section>
 
       {/* Team Section - Reimagined */}
-      <section className="py-20 bg-brand-cream">
-        <div className="container mx-auto px-6">
+      <section className="py-12 md:py-20 bg-brand-cream">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-4xl mx-auto">
-            <h2 className="font-playfair text-4xl text-center mb-8 text-brand-charcoal">
+            <h2 className="font-playfair text-3xl md:text-4xl text-center mb-4 md:mb-8 text-brand-charcoal">
               The Team Behind The Q
             </h2>
-            <p className="text-center text-xl text-brand-stone mb-12 leading-relaxed">
+            <p className="text-center text-lg md:text-xl text-brand-stone mb-8 md:mb-12 leading-relaxed">
               Our collaborative network brings together master artisans, innovative designers, and textile specialists across Istanbul and beyond. From traditional weavers who've perfected their craft over decades to forward-thinking production partners embracing the latest sustainability standards, every member of our extended team contributes their unique expertise to create textiles that define luxury hospitality.
             </p>
 
             {/* Team Stats */}
-            <div className="grid md:grid-cols-3 gap-8 mb-12">
-              <div className="bg-white p-8 rounded-lg shadow-md text-center">
-                <div className="w-16 h-16 mx-auto mb-4 bg-brand-lilac-light rounded-full flex items-center justify-center">
-                  <Users className="w-8 h-8 text-brand-lilac-dark" />
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-8 md:mb-12">
+              <div className="bg-white p-6 md:p-8 rounded-lg shadow-md text-center">
+                <div className="w-12 h-12 md:w-16 md:h-16 mx-auto mb-3 md:mb-4 bg-brand-lilac-light rounded-full flex items-center justify-center">
+                  <Users className="w-6 h-6 md:w-8 md:h-8 text-brand-lilac-dark" />
                 </div>
-                <div className="text-3xl font-bold text-brand-lilac mb-2">
+                <div className="text-2xl md:text-3xl font-bold text-brand-lilac mb-2">
                   Expert Network
                 </div>
-                <p className="text-brand-stone">
+                <p className="text-sm md:text-base text-brand-stone">
                   Master artisans & designers
                 </p>
               </div>
 
-              <div className="bg-white p-8 rounded-lg shadow-md text-center">
-                <div className="w-16 h-16 mx-auto mb-4 bg-brand-lilac-light rounded-full flex items-center justify-center">
-                  <Globe className="w-8 h-8 text-brand-lilac-dark" />
+              <div className="bg-white p-6 md:p-8 rounded-lg shadow-md text-center">
+                <div className="w-12 h-12 md:w-16 md:h-16 mx-auto mb-3 md:mb-4 bg-brand-lilac-light rounded-full flex items-center justify-center">
+                  <Globe className="w-6 h-6 md:w-8 md:h-8 text-brand-lilac-dark" />
                 </div>
-                <div className="text-3xl font-bold text-brand-lilac mb-2">
+                <div className="text-2xl md:text-3xl font-bold text-brand-lilac mb-2">
                   Global Partners
                 </div>
-                <p className="text-brand-stone">
+                <p className="text-sm md:text-base text-brand-stone">
                   Production facilities worldwide
                 </p>
               </div>
 
-              <div className="bg-white p-8 rounded-lg shadow-md text-center">
-                <div className="w-16 h-16 mx-auto mb-4 bg-brand-lilac-light rounded-full flex items-center justify-center">
-                  <TrendingUp className="w-8 h-8 text-brand-lilac-dark" />
+              <div className="bg-white p-6 md:p-8 rounded-lg shadow-md text-center">
+                <div className="w-12 h-12 md:w-16 md:h-16 mx-auto mb-3 md:mb-4 bg-brand-lilac-light rounded-full flex items-center justify-center">
+                  <TrendingUp className="w-6 h-6 md:w-8 md:h-8 text-brand-lilac-dark" />
                 </div>
-                <div className="text-3xl font-bold text-brand-lilac mb-2">
+                <div className="text-2xl md:text-3xl font-bold text-brand-lilac mb-2">
                   27 Years
                 </div>
-                <p className="text-brand-stone">
+                <p className="text-sm md:text-base text-brand-stone">
                   Combined founders' experience
                 </p>
               </div>
             </div>
 
-            {/* Image Grid - FIXED aspect ratio */}
-            <div className="grid md:grid-cols-2 gap-6 mb-12">
-              <div className="relative aspect-video rounded-lg overflow-hidden shadow-lg">
+            {/* Image Grid - MOBILE OPTIMIZED */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-8 md:mb-12">
+              <div className="relative w-full h-[200px] md:h-64 rounded-lg overflow-hidden shadow-lg">
                 <Image
                   src="/images/team-workshop.jpg"
                   alt="Our artisans at work"
                   fill
-                  className="object-cover"
+                  className="object-cover object-center"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
-              <div className="relative aspect-video rounded-lg overflow-hidden shadow-lg">
+              <div className="relative w-full h-[200px] md:h-64 rounded-lg overflow-hidden shadow-lg">
                 <Image
                   src="/images/team-design.jpg"
                   alt="Design team collaboration"
                   fill
-                  className="object-cover"
+                  className="object-cover object-center"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
@@ -230,7 +230,7 @@ export default function AboutPage() {
             <div className="text-center">
               <Link 
                 href="/contact"
-                className="inline-block bg-brand-lilac text-white px-10 py-4 rounded-subtle hover:bg-brand-lilac-dark transition-all duration-300 text-lg font-medium shadow-lg hover:shadow-xl"
+                className="inline-block bg-brand-lilac text-white px-8 md:px-10 py-3 md:py-4 rounded-subtle hover:bg-brand-lilac-dark transition-all duration-300 text-base md:text-lg font-medium shadow-lg hover:shadow-xl"
               >
                 Work With Us →
               </Link>
@@ -240,80 +240,80 @@ export default function AboutPage() {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-6">
-          <h2 className="font-playfair text-4xl text-center mb-16 text-brand-charcoal">
+      <section className="py-12 md:py-20 bg-white">
+        <div className="container mx-auto px-4 md:px-6">
+          <h2 className="font-playfair text-3xl md:text-4xl text-center mb-8 md:mb-16 text-brand-charcoal">
             Why Leading Brands Choose The Q
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <div className="bg-brand-cream p-8 rounded-lg">
-              <div className="w-12 h-12 mb-4 bg-brand-lilac rounded-lg flex items-center justify-center">
-                <Shield className="w-6 h-6 text-white" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
+            <div className="bg-brand-cream p-6 md:p-8 rounded-lg">
+              <div className="w-10 h-10 md:w-12 md:h-12 mb-3 md:mb-4 bg-brand-lilac rounded-lg flex items-center justify-center">
+                <Shield className="w-5 h-5 md:w-6 md:h-6 text-white" />
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-brand-charcoal">
+              <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3 text-brand-charcoal">
                 Proven Excellence
               </h3>
-              <p className="text-brand-stone">
+              <p className="text-sm md:text-base text-brand-stone">
                 7+ years serving luxury hospitality with 98% client satisfaction rate.
               </p>
             </div>
 
-            <div className="bg-brand-cream p-8 rounded-lg">
-              <div className="w-12 h-12 mb-4 bg-brand-lilac rounded-lg flex items-center justify-center">
-                <Target className="w-6 h-6 text-white" />
+            <div className="bg-brand-cream p-6 md:p-8 rounded-lg">
+              <div className="w-10 h-10 md:w-12 md:h-12 mb-3 md:mb-4 bg-brand-lilac rounded-lg flex items-center justify-center">
+                <Target className="w-5 h-5 md:w-6 md:h-6 text-white" />
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-brand-charcoal">
+              <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3 text-brand-charcoal">
                 Complete Customization
               </h3>
-              <p className="text-brand-stone">
+              <p className="text-sm md:text-base text-brand-stone">
                 From thread selection to final embroidery, everything is tailored to your vision.
               </p>
             </div>
 
-            <div className="bg-brand-cream p-8 rounded-lg">
-              <div className="w-12 h-12 mb-4 bg-brand-lilac rounded-lg flex items-center justify-center">
-                <Globe className="w-6 h-6 text-white" />
+            <div className="bg-brand-cream p-6 md:p-8 rounded-lg">
+              <div className="w-10 h-10 md:w-12 md:h-12 mb-3 md:mb-4 bg-brand-lilac rounded-lg flex items-center justify-center">
+                <Globe className="w-5 h-5 md:w-6 md:h-6 text-white" />
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-brand-charcoal">
+              <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3 text-brand-charcoal">
                 Global Reach
               </h3>
-              <p className="text-brand-stone">
+              <p className="text-sm md:text-base text-brand-stone">
                 Serving 200+ clients worldwide with seamless international logistics.
               </p>
             </div>
 
-            <div className="bg-brand-cream p-8 rounded-lg">
-              <div className="w-12 h-12 mb-4 bg-brand-lilac rounded-lg flex items-center justify-center">
-                <Sparkles className="w-6 h-6 text-white" />
+            <div className="bg-brand-cream p-6 md:p-8 rounded-lg">
+              <div className="w-10 h-10 md:w-12 md:h-12 mb-3 md:mb-4 bg-brand-lilac rounded-lg flex items-center justify-center">
+                <Sparkles className="w-5 h-5 md:w-6 md:h-6 text-white" />
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-brand-charcoal">
+              <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3 text-brand-charcoal">
                 Premium Materials
               </h3>
-              <p className="text-brand-stone">
+              <p className="text-sm md:text-base text-brand-stone">
                 Egyptian cotton, Turkish terry, European linens – only the finest.
               </p>
             </div>
 
-            <div className="bg-brand-cream p-8 rounded-lg">
-              <div className="w-12 h-12 mb-4 bg-brand-lilac rounded-lg flex items-center justify-center">
-                <Award className="w-6 h-6 text-white" />
+            <div className="bg-brand-cream p-6 md:p-8 rounded-lg">
+              <div className="w-10 h-10 md:w-12 md:h-12 mb-3 md:mb-4 bg-brand-lilac rounded-lg flex items-center justify-center">
+                <Award className="w-5 h-5 md:w-6 md:h-6 text-white" />
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-brand-charcoal">
+              <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3 text-brand-charcoal">
                 Commercial Grade
               </h3>
-              <p className="text-brand-stone">
+              <p className="text-sm md:text-base text-brand-stone">
                 Built to withstand 300+ industrial wash cycles without losing quality.
               </p>
             </div>
 
-            <div className="bg-brand-cream p-8 rounded-lg">
-              <div className="w-12 h-12 mb-4 bg-brand-lilac rounded-lg flex items-center justify-center">
-                <Heart className="w-6 h-6 text-white" />
+            <div className="bg-brand-cream p-6 md:p-8 rounded-lg">
+              <div className="w-10 h-10 md:w-12 md:h-12 mb-3 md:mb-4 bg-brand-lilac rounded-lg flex items-center justify-center">
+                <Heart className="w-5 h-5 md:w-6 md:h-6 text-white" />
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-brand-charcoal">
+              <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3 text-brand-charcoal">
                 Personal Touch
               </h3>
-              <p className="text-brand-stone">
+              <p className="text-sm md:text-base text-brand-stone">
                 Dedicated account manager for every project, from concept to delivery.
               </p>
             </div>
@@ -322,24 +322,24 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-brand-charcoal text-white">
-        <div className="container mx-auto px-6 text-center">
-          <h2 className="font-playfair text-4xl md:text-5xl mb-6">
+      <section className="py-12 md:py-20 bg-brand-charcoal text-white">
+        <div className="container mx-auto px-4 md:px-6 text-center">
+          <h2 className="font-playfair text-3xl md:text-4xl lg:text-5xl mb-4 md:mb-6">
             Ready to Experience The Q Difference?
           </h2>
-          <p className="text-xl text-neutral-300 mb-8 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-neutral-300 mb-6 md:mb-8 max-w-2xl mx-auto">
             Let's create something extraordinary together. Our team is ready to bring your textile vision to life.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
-              className="bg-brand-lilac text-white px-10 py-4 rounded-subtle hover:bg-brand-lilac-light transition-colors text-lg font-medium"
+              className="bg-brand-lilac text-white px-8 md:px-10 py-3 md:py-4 rounded-subtle hover:bg-brand-lilac-light transition-colors text-base md:text-lg font-medium"
             >
               Start Your Project
             </Link>
             <Link
               href="/projects"
-              className="bg-transparent border-2 border-white text-white px-10 py-4 rounded-subtle hover:bg-white hover:text-brand-charcoal transition-colors text-lg font-medium"
+              className="bg-transparent border-2 border-white text-white px-8 md:px-10 py-3 md:py-4 rounded-subtle hover:bg-white hover:text-brand-charcoal transition-colors text-base md:text-lg font-medium"
             >
               View Our Portfolio
             </Link>
