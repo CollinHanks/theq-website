@@ -241,7 +241,7 @@ const industriesData = {
     }
   },
   'cafes-bistros': {
-    name: 'Cafes & Bistros',
+    name: 'Cafés & Bistros',
     description: 'Casual yet stylish textile solutions for cafes, bistros, and casual dining',
     fullDescription: 'Add warmth and character to your cafe or bistro with our carefully curated textile collection. Designed for the fast-paced casual dining environment, our products balance style with practicality. From charming tablecloths to durable staff aprons, each piece is crafted to withstand daily use while maintaining its appeal. Perfect for cafes, bistros, and casual restaurants that want to create a welcoming atmosphere.',
     products: [
@@ -396,9 +396,10 @@ export async function generateStaticParams() {
 export async function generateMetadata({ 
   params 
 }: { 
-  params: { slug: string } 
+  params: Promise<{ slug: string }> 
 }): Promise<Metadata> {
-  const industry = industriesData[params.slug as IndustrySlug]
+  const { slug } = await params
+  const industry = industriesData[slug as IndustrySlug]
   
   if (!industry) {
     return {
@@ -412,12 +413,13 @@ export async function generateMetadata({
   }
 }
 
-export default function IndustryPage({ 
+export default async function IndustryPage({ 
   params 
 }: { 
-  params: { slug: string } 
+  params: Promise<{ slug: string }> 
 }) {
-  const industry = industriesData[params.slug as IndustrySlug]
+  const { slug } = await params
+  const industry = industriesData[slug as IndustrySlug]
 
   if (!industry) {
     notFound()
