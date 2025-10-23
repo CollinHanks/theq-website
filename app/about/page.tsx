@@ -23,14 +23,14 @@ export default function AboutPage() {
       <section className="py-12 md:py-20">
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
-            {/* Image - SMART SIZING */}
-            <div className="relative w-full h-[300px] md:h-[400px] lg:h-[500px] rounded-lg overflow-hidden shadow-xl">
+            {/* Image - ASPECT RATIO MATCH */}
+            <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden shadow-xl bg-neutral-50">
               <Image
                 src="/images/about-workshop.jpg"
                 alt="The Q atelier workshop in Istanbul"
                 fill
-                className="object-cover object-center scale-100"
-                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 priority
               />
             </div>
@@ -78,14 +78,14 @@ export default function AboutPage() {
               </div>
             </div>
 
-            {/* Image - SMART SIZING */}
-            <div className="relative w-full h-[300px] md:h-[400px] lg:h-[500px] rounded-lg overflow-hidden shadow-xl order-1 lg:order-2">
+            {/* Image - ASPECT RATIO MATCH */}
+            <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden shadow-xl bg-neutral-50 order-1 lg:order-2">
               <Image
                 src="/images/about-craftsmanship.jpg"
                 alt="Artisan craftsmanship at The Q"
                 fill
-                className="object-cover object-center scale-100"
-                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
           </div>
@@ -204,23 +204,23 @@ export default function AboutPage() {
               </div>
             </div>
 
-            {/* Image Grid - MOBILE OPTIMIZED */}
+            {/* Image Grid - 16:9 ASPECT */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-8 md:mb-12">
-              <div className="relative w-full h-[200px] md:h-64 rounded-lg overflow-hidden shadow-lg">
+              <div className="relative w-full aspect-video rounded-lg overflow-hidden shadow-lg bg-neutral-50">
                 <Image
                   src="/images/team-workshop.jpg"
                   alt="Our artisans at work"
                   fill
-                  className="object-cover object-center"
+                  className="object-cover"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
-              <div className="relative w-full h-[200px] md:h-64 rounded-lg overflow-hidden shadow-lg">
+              <div className="relative w-full aspect-video rounded-lg overflow-hidden shadow-lg bg-neutral-50">
                 <Image
                   src="/images/team-design.jpg"
                   alt="Design team collaboration"
                   fill
-                  className="object-cover object-center"
+                  className="object-cover"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
