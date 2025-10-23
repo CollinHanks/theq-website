@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { Award, Users, Sparkles, Globe, Target, Heart, TrendingUp, Shield } from 'lucide-react'
+import { Award, Users, Sparkles, Globe, Target, Heart, TrendingUp, Shield, Leaf, Palette, Clock } from 'lucide-react'
 
 export default function AboutPage() {
   return (
@@ -23,14 +23,15 @@ export default function AboutPage() {
       <section className="py-20">
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            {/* Image - FIXED: object-contain instead of object-cover */}
-            <div className="relative h-[500px] rounded-lg overflow-hidden shadow-xl bg-neutral-100">
+            {/* Image - FIXED: proper aspect ratio with object-cover */}
+            <div className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-xl">
               <Image
                 src="/images/about-workshop.jpg"
                 alt="The Q atelier workshop in Istanbul"
                 fill
-                className="object-contain"
+                className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
+                priority
               />
             </div>
 
@@ -77,13 +78,13 @@ export default function AboutPage() {
               </div>
             </div>
 
-            {/* Image - FIXED: object-contain instead of object-cover */}
-            <div className="relative h-[500px] rounded-lg overflow-hidden shadow-xl bg-neutral-100">
+            {/* Image - FIXED: proper aspect ratio */}
+            <div className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-xl">
               <Image
                 src="/images/about-craftsmanship.jpg"
                 alt="Artisan craftsmanship at The Q"
                 fill
-                className="object-contain"
+                className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
@@ -91,16 +92,16 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Values Section - Modern Icons */}
+      {/* Values Section - BRAND COLORS ONLY */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <h2 className="font-playfair text-4xl text-center mb-16 text-brand-charcoal">
             Our Values
           </h2>
           <div className="grid md:grid-cols-4 gap-8">
-            {/* Quality First */}
+            {/* Quality First - Purple */}
             <div className="text-center group">
-              <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-brand-lilac to-brand-lilac-dark rounded-2xl flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300 shadow-lg">
+              <div className="w-20 h-20 mx-auto mb-6 bg-brand-lilac rounded-2xl flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300 shadow-lg">
                 <Award className="w-10 h-10 text-white" />
               </div>
               <h3 className="font-semibold text-xl mb-3 text-brand-charcoal">
@@ -111,10 +112,10 @@ export default function AboutPage() {
               </p>
             </div>
 
-            {/* Sustainable Practice */}
+            {/* Sustainable Practice - Dark Purple */}
             <div className="text-center group">
-              <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                <Sparkles className="w-10 h-10 text-white" />
+              <div className="w-20 h-20 mx-auto mb-6 bg-brand-lilac-dark rounded-2xl flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                <Leaf className="w-10 h-10 text-white" />
               </div>
               <h3 className="font-semibold text-xl mb-3 text-brand-charcoal">
                 Sustainable Practice
@@ -124,10 +125,10 @@ export default function AboutPage() {
               </p>
             </div>
 
-            {/* Bespoke Design */}
+            {/* Bespoke Design - Charcoal */}
             <div className="text-center group">
-              <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-amber-500 to-amber-600 rounded-2xl flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                <Target className="w-10 h-10 text-white" />
+              <div className="w-20 h-20 mx-auto mb-6 bg-brand-charcoal rounded-2xl flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                <Palette className="w-10 h-10 text-white" />
               </div>
               <h3 className="font-semibold text-xl mb-3 text-brand-charcoal">
                 Bespoke Design
@@ -137,10 +138,10 @@ export default function AboutPage() {
               </p>
             </div>
 
-            {/* Timeless Elegance */}
+            {/* Timeless Elegance - Light Purple */}
             <div className="text-center group">
-              <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-rose-500 to-rose-600 rounded-2xl flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                <Heart className="w-10 h-10 text-white" />
+              <div className="w-20 h-20 mx-auto mb-6 bg-brand-lilac-light rounded-2xl flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                <Clock className="w-10 h-10 text-brand-lilac-dark" />
               </div>
               <h3 className="font-semibold text-xl mb-3 text-brand-charcoal">
                 Timeless Elegance
@@ -203,23 +204,23 @@ export default function AboutPage() {
               </div>
             </div>
 
-            {/* Image Grid - FIXED: object-contain */}
+            {/* Image Grid - FIXED aspect ratio */}
             <div className="grid md:grid-cols-2 gap-6 mb-12">
-              <div className="relative h-64 rounded-lg overflow-hidden shadow-lg bg-neutral-100">
+              <div className="relative aspect-video rounded-lg overflow-hidden shadow-lg">
                 <Image
                   src="/images/team-workshop.jpg"
                   alt="Our artisans at work"
                   fill
-                  className="object-contain"
+                  className="object-cover"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
-              <div className="relative h-64 rounded-lg overflow-hidden shadow-lg bg-neutral-100">
+              <div className="relative aspect-video rounded-lg overflow-hidden shadow-lg">
                 <Image
                   src="/images/team-design.jpg"
                   alt="Design team collaboration"
                   fill
-                  className="object-contain"
+                  className="object-cover"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
