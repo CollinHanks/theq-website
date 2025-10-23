@@ -144,61 +144,78 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Industries - UPDATED WITH CLICKABLE LINKS */}
+      {/* Industries - FIXED AND CLICKABLE */}
       <section className="py-20 bg-white" id="industries">
         <div className="container mx-auto px-6">
           <h2 className="font-playfair text-display-md text-center mb-4">Industries We Serve</h2>
           <p className="text-center text-brand-stone text-lg mb-12 max-w-2xl mx-auto">
             Tailored textile solutions for diverse hospitality sectors, each crafted with meticulous attention to industry-specific needs.
           </p>
+          
+          {/* FIXED: Proper grid with equal sized boxes */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {/* Luxury Hotels */}
             <Link 
               href="/industries/luxury-hotels"
-              className="text-center py-8 px-4 bg-brand-cream rounded-subtle hover:bg-brand-lilac-light transition-all duration-300 cursor-pointer group"
+              className="text-center py-8 px-4 bg-brand-cream rounded-subtle hover:bg-brand-lilac-light hover:shadow-md transition-all duration-300 cursor-pointer group"
             >
               <p className="font-medium text-brand-charcoal group-hover:text-brand-lilac-dark">Luxury Hotels</p>
             </Link>
+
+            {/* Fine Dining */}
             <Link 
               href="/industries/fine-dining"
-              className="text-center py-8 px-4 bg-brand-lilac-light rounded-subtle hover:bg-brand-lilac transition-all duration-300 cursor-pointer group"
+              className="text-center py-8 px-4 bg-brand-lilac-light rounded-subtle hover:bg-brand-lilac hover:shadow-md transition-all duration-300 cursor-pointer group"
             >
-              <p className="font-medium text-brand-charcoal group-hover:text-white">Fine Dining</p>
+              <p className="font-medium text-brand-charcoal">Fine Dining</p>
             </Link>
+
+            {/* Boutique Resorts */}
             <Link 
               href="/industries/boutique-resorts"
-              className="text-center py-8 px-4 bg-brand-cream rounded-subtle hover:bg-brand-lilac-light transition-all duration-300 cursor-pointer group"
+              className="text-center py-8 px-4 bg-brand-lilac-light rounded-subtle hover:bg-brand-lilac hover:shadow-md transition-all duration-300 cursor-pointer group"
             >
-              <p className="font-medium text-brand-charcoal group-hover:text-brand-lilac-dark">Boutique Resorts</p>
+              <p className="font-medium text-brand-charcoal">Boutique Resorts</p>
             </Link>
+
+            {/* Wellness Centers */}
             <Link 
               href="/industries/wellness-centers"
-              className="text-center py-8 px-4 bg-brand-cream rounded-subtle hover:bg-brand-lilac-light transition-all duration-300 cursor-pointer group"
+              className="text-center py-8 px-4 bg-brand-cream rounded-subtle hover:bg-brand-lilac-light hover:shadow-md transition-all duration-300 cursor-pointer group"
             >
               <p className="font-medium text-brand-charcoal group-hover:text-brand-lilac-dark">Wellness Centers</p>
             </Link>
+
+            {/* Corporate Venues */}
             <Link 
               href="/industries/corporate-venues"
-              className="text-center py-8 px-4 bg-brand-cream rounded-subtle hover:bg-brand-lilac-light transition-all duration-300 cursor-pointer group"
+              className="text-center py-8 px-4 bg-brand-cream rounded-subtle hover:bg-brand-lilac-light hover:shadow-md transition-all duration-300 cursor-pointer group"
             >
               <p className="font-medium text-brand-charcoal group-hover:text-brand-lilac-dark">Corporate Venues</p>
             </Link>
+
+            {/* Cafés & Bistros */}
             <Link 
               href="/industries/cafes-bistros"
-              className="text-center py-8 px-4 bg-brand-cream rounded-subtle hover:bg-brand-lilac-light transition-all duration-300 cursor-pointer group"
+              className="text-center py-8 px-4 bg-brand-cream rounded-subtle hover:bg-brand-lilac-light hover:shadow-md transition-all duration-300 cursor-pointer group"
             >
               <p className="font-medium text-brand-charcoal group-hover:text-brand-lilac-dark">Cafés & Bistros</p>
             </Link>
+
+            {/* Beach Clubs */}
             <Link 
               href="/industries/beach-clubs"
-              className="text-center py-8 px-4 bg-brand-cream rounded-subtle hover:bg-brand-lilac-light transition-all duration-300 cursor-pointer group"
+              className="text-center py-8 px-4 bg-brand-cream rounded-subtle hover:bg-brand-lilac-light hover:shadow-md transition-all duration-300 cursor-pointer group"
             >
               <p className="font-medium text-brand-charcoal group-hover:text-brand-lilac-dark">Beach Clubs</p>
             </Link>
+
+            {/* Private Yachts */}
             <Link 
               href="/industries/private-yachts"
-              className="text-center py-8 px-4 bg-brand-lilac-light rounded-subtle hover:bg-brand-lilac transition-all duration-300 cursor-pointer group"
+              className="text-center py-8 px-4 bg-brand-lilac-light rounded-subtle hover:bg-brand-lilac hover:shadow-md transition-all duration-300 cursor-pointer group"
             >
-              <p className="font-medium text-brand-charcoal group-hover:text-white">Private Yachts</p>
+              <p className="font-medium text-brand-charcoal">Private Yachts</p>
             </Link>
           </div>
         </div>
