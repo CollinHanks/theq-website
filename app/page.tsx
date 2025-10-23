@@ -144,7 +144,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Industries - FIXED AND CLICKABLE */}
+      {/* Industries - COMPLETELY FIXED */}
       <section className="py-20 bg-white" id="industries">
         <div className="container mx-auto px-6">
           <h2 className="font-playfair text-display-md text-center mb-4">Industries We Serve</h2>
@@ -152,9 +152,9 @@ export default function Home() {
             Tailored textile solutions for diverse hospitality sectors, each crafted with meticulous attention to industry-specific needs.
           </p>
           
-          {/* FIXED: Proper grid with equal sized boxes */}
+          {/* COMPLETELY FIXED: All boxes equal size, proper colors */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {/* Luxury Hotels */}
+            {/* Luxury Hotels - Gray */}
             <Link 
               href="/industries/luxury-hotels"
               className="text-center py-8 px-4 bg-brand-cream rounded-subtle hover:bg-brand-lilac-light hover:shadow-md transition-all duration-300 cursor-pointer group"
@@ -162,7 +162,7 @@ export default function Home() {
               <p className="font-medium text-brand-charcoal group-hover:text-brand-lilac-dark">Luxury Hotels</p>
             </Link>
 
-            {/* Fine Dining */}
+            {/* Fine Dining - Purple */}
             <Link 
               href="/industries/fine-dining"
               className="text-center py-8 px-4 bg-brand-lilac-light rounded-subtle hover:bg-brand-lilac hover:shadow-md transition-all duration-300 cursor-pointer group"
@@ -170,15 +170,15 @@ export default function Home() {
               <p className="font-medium text-brand-charcoal">Fine Dining</p>
             </Link>
 
-            {/* Boutique Resorts */}
+            {/* Boutique Resorts - Gray */}
             <Link 
               href="/industries/boutique-resorts"
-              className="text-center py-8 px-4 bg-brand-lilac-light rounded-subtle hover:bg-brand-lilac hover:shadow-md transition-all duration-300 cursor-pointer group"
+              className="text-center py-8 px-4 bg-brand-cream rounded-subtle hover:bg-brand-lilac-light hover:shadow-md transition-all duration-300 cursor-pointer group"
             >
-              <p className="font-medium text-brand-charcoal">Boutique Resorts</p>
+              <p className="font-medium text-brand-charcoal group-hover:text-brand-lilac-dark">Boutique Resorts</p>
             </Link>
 
-            {/* Wellness Centers */}
+            {/* Wellness Centers - Gray */}
             <Link 
               href="/industries/wellness-centers"
               className="text-center py-8 px-4 bg-brand-cream rounded-subtle hover:bg-brand-lilac-light hover:shadow-md transition-all duration-300 cursor-pointer group"
@@ -186,7 +186,7 @@ export default function Home() {
               <p className="font-medium text-brand-charcoal group-hover:text-brand-lilac-dark">Wellness Centers</p>
             </Link>
 
-            {/* Corporate Venues */}
+            {/* Corporate Venues - Gray */}
             <Link 
               href="/industries/corporate-venues"
               className="text-center py-8 px-4 bg-brand-cream rounded-subtle hover:bg-brand-lilac-light hover:shadow-md transition-all duration-300 cursor-pointer group"
@@ -194,7 +194,7 @@ export default function Home() {
               <p className="font-medium text-brand-charcoal group-hover:text-brand-lilac-dark">Corporate Venues</p>
             </Link>
 
-            {/* Cafés & Bistros */}
+            {/* Cafés & Bistros - Gray */}
             <Link 
               href="/industries/cafes-bistros"
               className="text-center py-8 px-4 bg-brand-cream rounded-subtle hover:bg-brand-lilac-light hover:shadow-md transition-all duration-300 cursor-pointer group"
@@ -202,7 +202,7 @@ export default function Home() {
               <p className="font-medium text-brand-charcoal group-hover:text-brand-lilac-dark">Cafés & Bistros</p>
             </Link>
 
-            {/* Beach Clubs */}
+            {/* Beach Clubs - Gray */}
             <Link 
               href="/industries/beach-clubs"
               className="text-center py-8 px-4 bg-brand-cream rounded-subtle hover:bg-brand-lilac-light hover:shadow-md transition-all duration-300 cursor-pointer group"
@@ -210,7 +210,7 @@ export default function Home() {
               <p className="font-medium text-brand-charcoal group-hover:text-brand-lilac-dark">Beach Clubs</p>
             </Link>
 
-            {/* Private Yachts */}
+            {/* Private Yachts - Purple */}
             <Link 
               href="/industries/private-yachts"
               className="text-center py-8 px-4 bg-brand-lilac-light rounded-subtle hover:bg-brand-lilac hover:shadow-md transition-all duration-300 cursor-pointer group"
