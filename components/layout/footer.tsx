@@ -70,7 +70,7 @@ export default function Footer() {
             <div className="space-y-2 mb-4">
               <div className="flex items-start gap-2 text-sm text-neutral-300">
                 <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0 text-brand-gold" />
-                <span>Sinpaş Queen Bomonti, İstanbul, Türkiye</span>
+                <span>Cumhuriyet, İncirli Dede Cd. No:8, Sinpaş Queen Bomonti, 34380 Şişli/İstanbul</span>
               </div>
               <div className="flex items-start gap-2 text-sm text-neutral-300">
                 <Mail className="w-4 h-4 mt-0.5 flex-shrink-0 text-brand-gold" />

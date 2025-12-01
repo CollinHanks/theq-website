@@ -158,8 +158,9 @@ export default function IletisimPage() {
                   <div>
                     <h3 className="font-semibold text-brand-charcoal mb-1">Adres</h3>
                     <p className="text-sm text-brand-stone">
-                      Sinpaş Queen Bomonti<br />
-                      İstanbul<br />
+                      Cumhuriyet, İncirli Dede Cd. No:8<br />
+                      Sinpaş Queen Bomonti Rezidans<br />
+                      34380 Şişli/İstanbul<br />
                       Türkiye
                     </p>
                   </div>
@@ -204,9 +205,18 @@ export default function IletisimPage() {
                 </div>
               </div>
 
-              {/* Harita Placeholder */}
-              <div className="aspect-video bg-neutral-200 rounded-lg flex items-center justify-center mt-6">
-                <span className="text-neutral-500 text-sm">[Google Maps Harita]</span>
+              {/* Google Maps */}
+              <div className="aspect-video rounded-lg overflow-hidden mt-6 border border-neutral-200">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3008.5892959755747!2d28.97285391530143!3d41.05771762192756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab736216f1c8d%3A0x36ccf31ef571605a!2sSinpa%C5%9F%20Queen%20Bomonti%20Rezidans!5e0!3m2!1str!2str!4v1733077200000!5m2!1str!2str"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="The Q Atelier - Sinpaş Queen Bomonti Konum"
+                />
               </div>
             </div>
           </div>
