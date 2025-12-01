@@ -12,9 +12,9 @@ export default function Footer() {
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-    
+
     // TODO: E-bülten abonelik mantığını buraya ekleyin
-    
+
     setTimeout(() => {
       setIsSubmitting(false)
       setEmail('')
@@ -40,7 +40,7 @@ export default function Footer() {
               2018'den beri otelcilik sektörünün tekstil partneri. Premium otel nevresim, restoran üniforma ve lüks spa tekstilleri üretiyoruz. Türkiye'nin dört bir yanındaki 200+ kurumsal müşterimize hizmet veriyoruz.
             </p>
           </div>
-          
+
           {/* Ürünler - 2 columns */}
           <div className="lg:col-span-2">
             <h4 className="font-semibold mb-3 text-base">Ürünler</h4>
@@ -50,7 +50,7 @@ export default function Footer() {
               <li><Link href="/referanslar" className="hover:text-brand-lilac transition-colors">Referanslar</Link></li>
             </ul>
           </div>
-          
+
           {/* Kurumsal - 2 columns */}
           <div className="lg:col-span-2">
             <h4 className="font-semibold mb-3 text-base">Kurumsal</h4>
@@ -61,28 +61,28 @@ export default function Footer() {
               <li><Link href="/teklif-al" className="hover:text-brand-lilac transition-colors">Teklif Al</Link></li>
             </ul>
           </div>
-          
+
           {/* İletişim & Bülten - 4 columns */}
           <div className="lg:col-span-4">
             <h4 className="font-semibold mb-3 text-base">Bize Ulaşın</h4>
-            
+
             {/* İletişim Bilgileri */}
             <div className="space-y-2 mb-4">
               <div className="flex items-start gap-2 text-sm text-neutral-300">
-                <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0 text-brand-lilac" />
-                <span>Bomonti, İstanbul, 34000, Türkiye</span>
+                <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0 text-brand-gold" />
+                <span>Sinpaş Queen Bomonti, İstanbul, Türkiye</span>
               </div>
               <div className="flex items-start gap-2 text-sm text-neutral-300">
-                <Mail className="w-4 h-4 mt-0.5 flex-shrink-0 text-brand-lilac" />
-                <Link href="mailto:hello@theqatelier.com" className="hover:text-brand-lilac transition-colors">
+                <Mail className="w-4 h-4 mt-0.5 flex-shrink-0 text-brand-gold" />
+                <Link href="mailto:hello@theqatelier.com" className="hover:text-brand-gold transition-colors">
                   hello@theqatelier.com
                 </Link>
               </div>
               <div className="flex items-start gap-2 text-sm text-neutral-300">
-                <Phone className="w-4 h-4 mt-0.5 flex-shrink-0 text-brand-lilac" />
-                <Link href="/iletisim" className="hover:text-brand-lilac transition-colors">
-                  İletişim Formu
-                </Link>
+                <Phone className="w-4 h-4 mt-0.5 flex-shrink-0 text-brand-gold" />
+                <a href="tel:+905302424848" className="hover:text-brand-gold transition-colors">
+                  +90 530 242 48 48
+                </a>
               </div>
             </div>
 
@@ -115,7 +115,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        
+
         {/* Alt Bar */}
         <div className="border-t border-neutral-800 mt-6 pt-5 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-neutral-400 text-center md:text-left">

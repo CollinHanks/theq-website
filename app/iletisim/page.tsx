@@ -16,9 +16,9 @@ export default function IletisimPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-    
+
     // TODO: Form gönderme mantığını buraya ekleyin
-    
+
     setTimeout(() => {
       setIsSubmitting(false)
       alert('Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağız.')
@@ -152,46 +152,46 @@ export default function IletisimPage() {
 
               <div className="space-y-4">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-brand-lilac-light rounded-lg flex items-center justify-center flex-shrink-0">
-                    <MapPin className="w-6 h-6 text-brand-lilac" />
+                  <div className="w-12 h-12 bg-brand-gold/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <MapPin className="w-6 h-6 text-brand-gold" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-brand-charcoal mb-1">Adres</h3>
                     <p className="text-sm text-brand-stone">
-                      Bomonti Mahallesi<br />
-                      İstanbul, 34000<br />
+                      Sinpaş Queen Bomonti<br />
+                      İstanbul<br />
                       Türkiye
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-brand-lilac-light rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Mail className="w-6 h-6 text-brand-lilac" />
+                  <div className="w-12 h-12 bg-brand-gold/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Mail className="w-6 h-6 text-brand-gold" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-brand-charcoal mb-1">E-posta</h3>
-                    <a href="mailto:hello@theqatelier.com" className="text-sm text-brand-lilac hover:text-brand-lilac-dark transition-colors">
+                    <a href="mailto:hello@theqatelier.com" className="text-sm text-brand-gold hover:text-brand-gold/80 transition-colors">
                       hello@theqatelier.com
                     </a>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-brand-lilac-light rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-6 h-6 text-brand-lilac" />
+                  <div className="w-12 h-12 bg-brand-gold/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Phone className="w-6 h-6 text-brand-gold" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-brand-charcoal mb-1">Telefon & WhatsApp</h3>
-                    <a href="tel:+905551234567" className="text-sm text-brand-lilac hover:text-brand-lilac-dark transition-colors">
-                      +90 555 123 45 67
+                    <a href="tel:+905302424848" className="text-sm text-brand-gold hover:text-brand-gold/80 transition-colors">
+                      +90 530 242 48 48
                     </a>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-brand-lilac-light rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Clock className="w-6 h-6 text-brand-lilac" />
+                  <div className="w-12 h-12 bg-brand-gold/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Clock className="w-6 h-6 text-brand-gold" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-brand-charcoal mb-1">Çalışma Saatleri</h3>
@@ -219,21 +219,21 @@ export default function IletisimPage() {
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="font-playfair text-2xl md:text-3xl mb-5">Hızlı İletişim Seçenekleri</h2>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a 
-                href="https://wa.me/905551234567" 
-                target="_blank" 
+              <a
+                href="https://wa.me/905302424848"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="bg-[#25D366] text-white px-8 py-3 rounded-subtle hover:bg-[#20BA5A] transition-colors font-medium"
               >
                 WhatsApp ile Yaz
               </a>
-              <a 
+              <a
                 href="mailto:hello@theqatelier.com"
                 className="bg-brand-lilac text-white px-8 py-3 rounded-subtle hover:bg-brand-lilac-dark transition-colors font-medium"
               >
                 E-posta Gönder
               </a>
-              <a 
+              <a
                 href="/teklif-al"
                 className="border-2 border-brand-charcoal text-brand-charcoal px-8 py-3 rounded-subtle hover:bg-brand-charcoal hover:text-white transition-colors font-medium"
               >

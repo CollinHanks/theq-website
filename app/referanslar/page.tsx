@@ -280,7 +280,7 @@ export default function ReferanslarPage() {
             </Link>
           </div>
           <p className="text-neutral-400 text-sm mt-6">
-            📞 WhatsApp: +90 555 123 45 67 | 📧 info@theqatelier.com
+            📞 WhatsApp: +90 530 242 48 48 | 📧 info@theqatelier.com
           </p>
         </div>
       </section>
