@@ -12,18 +12,35 @@ export default function IletisimPage() {
     message: ''
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [responseMessage, setResponseMessage] = useState<{ type: 'success' | 'error', text: string } | null>(null)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
+    setResponseMessage(null)
 
-    // TODO: Form gönderme mantığını buraya ekleyin
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
 
-    setTimeout(() => {
+      const data = await response.json()
+
+      if (response.ok) {
+        setResponseMessage({ type: 'success', text: data.message })
+        setFormData({ name: '', email: '', phone: '', company: '', message: '' })
+      } else {
+        setResponseMessage({ type: 'error', text: data.error })
+      }
+    } catch (error) {
+      setResponseMessage({ type: 'error', text: 'Bir hata oluştu, lütfen tekrar deneyin' })
+    } finally {
       setIsSubmitting(false)
-      alert('Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağız.')
-      setFormData({ name: '', email: '', phone: '', company: '', message: '' })
-    }, 1000)
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -70,7 +87,7 @@ export default function IletisimPage() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-subtle border border-neutral-300 focus:border-brand-lilac focus:ring-1 focus:ring-brand-lilac outline-none transition-colors"
+                    className="w-full px-4 py-3 rounded-subtle border border-neutral-300 focus:border-brand-gold focus:ring-1 focus:ring-brand-gold outline-none transition-colors"
                   />
                 </div>
 
@@ -85,7 +102,7 @@ export default function IletisimPage() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-subtle border border-neutral-300 focus:border-brand-lilac focus:ring-1 focus:ring-brand-lilac outline-none transition-colors"
+                    className="w-full px-4 py-3 rounded-subtle border border-neutral-300 focus:border-brand-gold focus:ring-1 focus:ring-brand-gold outline-none transition-colors"
                   />
                 </div>
 
@@ -99,7 +116,7 @@ export default function IletisimPage() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-subtle border border-neutral-300 focus:border-brand-lilac focus:ring-1 focus:ring-brand-lilac outline-none transition-colors"
+                    className="w-full px-4 py-3 rounded-subtle border border-neutral-300 focus:border-brand-gold focus:ring-1 focus:ring-brand-gold outline-none transition-colors"
                   />
                 </div>
 
@@ -113,7 +130,7 @@ export default function IletisimPage() {
                     name="company"
                     value={formData.company}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-subtle border border-neutral-300 focus:border-brand-lilac focus:ring-1 focus:ring-brand-lilac outline-none transition-colors"
+                    className="w-full px-4 py-3 rounded-subtle border border-neutral-300 focus:border-brand-gold focus:ring-1 focus:ring-brand-gold outline-none transition-colors"
                   />
                 </div>
 
@@ -128,17 +145,23 @@ export default function IletisimPage() {
                     onChange={handleChange}
                     required
                     rows={5}
-                    className="w-full px-4 py-3 rounded-subtle border border-neutral-300 focus:border-brand-lilac focus:ring-1 focus:ring-brand-lilac outline-none transition-colors resize-none"
+                    className="w-full px-4 py-3 rounded-subtle border border-neutral-300 focus:border-brand-gold focus:ring-1 focus:ring-brand-gold outline-none transition-colors resize-none"
                   />
                 </div>
 
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-brand-lilac text-white px-6 py-3 rounded-subtle hover:bg-brand-lilac-dark transition-colors font-medium disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full bg-brand-gold text-white px-6 py-3 rounded-subtle hover:bg-brand-gold/90 transition-colors font-medium disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? 'Gönderiliyor...' : 'Mesaj Gönder'}
                 </button>
+
+                {responseMessage && (
+                  <div className={`p-4 rounded-lg ${responseMessage.type === 'success' ? 'bg-green-50 text-green-800 border border-green-200' : 'bg-red-50 text-red-800 border border-red-200'}`}>
+                    <p className="text-sm">{responseMessage.text}</p>
+                  </div>
+                )}
               </form>
             </div>
 

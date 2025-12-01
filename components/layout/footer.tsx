@@ -8,18 +8,35 @@ import { Mail, MapPin, Phone } from 'lucide-react'
 export default function Footer() {
   const [email, setEmail] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [message, setMessage] = useState<{ type: 'success' | 'error', text: string } | null>(null)
 
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
+    setMessage(null)
 
-    // TODO: E-bülten abonelik mantığını buraya ekleyin
+    try {
+      const response = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      })
 
-    setTimeout(() => {
+      const data = await response.json()
+
+      if (response.ok) {
+        setMessage({ type: 'success', text: data.message })
+        setEmail('')
+      } else {
+        setMessage({ type: 'error', text: data.error })
+      }
+    } catch (error) {
+      setMessage({ type: 'error', text: 'Bir hata oluştu, lütfen tekrar deneyin' })
+    } finally {
       setIsSubmitting(false)
-      setEmail('')
-      alert('Bültenimize abone olduğunuz için teşekkürler!')
-    }, 1000)
+    }
   }
 
   return (
@@ -89,28 +106,35 @@ export default function Footer() {
             {/* E-Bülten Aboneliği */}
             <div className="mt-4">
               <p className="text-xs text-neutral-400 mb-2">Kampanya ve yeniliklerden haberdar olun</p>
-              <form onSubmit={handleSubscribe} className="flex gap-2">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="E-posta adresiniz"
-                  required
-                  className="flex-1 px-3 py-2 text-sm bg-neutral-800 border border-neutral-700 rounded-subtle 
-                           text-white placeholder-neutral-500
-                           focus:outline-none focus:border-brand-lilac focus:ring-1 focus:ring-brand-lilac
-                           transition-colors"
-                />
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="px-4 py-2 text-sm font-medium bg-brand-lilac text-white rounded-subtle
-                           hover:bg-brand-lilac-dark transition-colors
-                           disabled:opacity-50 disabled:cursor-not-allowed
-                           whitespace-nowrap"
-                >
-                  {isSubmitting ? 'Gönderiliyor...' : 'Abone Ol'}
-                </button>
+              <form onSubmit={handleSubscribe} className="space-y-2">
+                <div className="flex gap-2">
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="E-posta adresiniz"
+                    required
+                    className="flex-1 px-3 py-2 text-sm bg-neutral-800 border border-neutral-700 rounded-subtle 
+                             text-white placeholder-neutral-500
+                             focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold
+                             transition-colors"
+                  />
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="px-4 py-2 text-sm font-medium bg-brand-gold text-white rounded-subtle
+                             hover:bg-brand-gold/90 transition-colors
+                             disabled:opacity-50 disabled:cursor-not-allowed
+                             whitespace-nowrap"
+                  >
+                    {isSubmitting ? 'Gönderiliyor...' : 'Abone Ol'}
+                  </button>
+                </div>
+                {message && (
+                  <p className={`text-xs ${message.type === 'success' ? 'text-green-400' : 'text-red-400'}`}>
+                    {message.text}
+                  </p>
+                )}
               </form>
             </div>
           </div>

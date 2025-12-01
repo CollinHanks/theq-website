@@ -17,22 +17,69 @@ export default function TeklifAlPage() {
     agree: false
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [responseMessage, setResponseMessage] = useState<{ type: 'success' | 'error', text: string } | null>(null)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-    
-    // TODO: Form gönderme mantığı
-    
-    setTimeout(() => {
+    setResponseMessage(null)
+
+    if (!formData.agree) {
+      setResponseMessage({ type: 'error', text: 'Lütfen gizlilik politikasını kabul edin' })
       setIsSubmitting(false)
-      alert('Teklifiniz başarıyla alındı! En kısa sürede size dönüş yapacağız.')
-    }, 1000)
+      return
+    }
+
+    try {
+      const response = await fetch('/api/quote', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          company: formData.company,
+          sector: formData.sector,
+          services: formData.services,
+          quantity: formData.quantity,
+          budget: formData.budget,
+          deadline: formData.deadline,
+          message: formData.message,
+        }),
+      })
+
+      const data = await response.json()
+
+      if (response.ok) {
+        setResponseMessage({ type: 'success', text: data.message })
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          company: '',
+          sector: '',
+          services: [],
+          quantity: '',
+          budget: '',
+          deadline: '',
+          message: '',
+          agree: false
+        })
+      } else {
+        setResponseMessage({ type: 'error', text: data.error })
+      }
+    } catch (error) {
+      setResponseMessage({ type: 'error', text: 'Bir hata oluştu, lütfen tekrar deneyin' })
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value, type } = e.target
-    
+
     if (type === 'checkbox') {
       const checked = (e.target as HTMLInputElement).checked
       if (name === 'agree') {
@@ -58,7 +105,7 @@ export default function TeklifAlPage() {
               Teklif Talep Formu
             </h1>
             <p className="text-lg text-brand-stone">
-              Tekstil ihtiyaçlarınız için detaylı teklif almak üzere formu doldurun. 
+              Tekstil ihtiyaçlarınız için detaylı teklif almak üzere formu doldurun.
               24 saat içinde size dönüş yapacağız.
             </p>
           </div>
@@ -82,7 +129,7 @@ export default function TeklifAlPage() {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-subtle border border-neutral-300 focus:border-brand-lilac focus:ring-1 focus:ring-brand-lilac outline-none"
+                      className="w-full px-4 py-3 rounded-subtle border border-neutral-300 focus:border-brand-gold focus:ring-1 focus:ring-brand-gold outline-none"
                     />
                   </div>
                   <div>
@@ -93,7 +140,7 @@ export default function TeklifAlPage() {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-subtle border border-neutral-300 focus:border-brand-lilac focus:ring-1 focus:ring-brand-lilac outline-none"
+                      className="w-full px-4 py-3 rounded-subtle border border-neutral-300 focus:border-brand-gold focus:ring-1 focus:ring-brand-gold outline-none"
                     />
                   </div>
                   <div>
@@ -104,7 +151,7 @@ export default function TeklifAlPage() {
                       value={formData.phone}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-subtle border border-neutral-300 focus:border-brand-lilac focus:ring-1 focus:ring-brand-lilac outline-none"
+                      className="w-full px-4 py-3 rounded-subtle border border-neutral-300 focus:border-brand-gold focus:ring-1 focus:ring-brand-gold outline-none"
                     />
                   </div>
                   <div>
@@ -115,7 +162,7 @@ export default function TeklifAlPage() {
                       value={formData.company}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-subtle border border-neutral-300 focus:border-brand-lilac focus:ring-1 focus:ring-brand-lilac outline-none"
+                      className="w-full px-4 py-3 rounded-subtle border border-neutral-300 focus:border-brand-gold focus:ring-1 focus:ring-brand-gold outline-none"
                     />
                   </div>
                 </div>
@@ -132,7 +179,7 @@ export default function TeklifAlPage() {
                       value={formData.sector}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-subtle border border-neutral-300 focus:border-brand-lilac focus:ring-1 focus:ring-brand-lilac outline-none"
+                      className="w-full px-4 py-3 rounded-subtle border border-neutral-300 focus:border-brand-gold focus:ring-1 focus:ring-brand-gold outline-none"
                     >
                       <option value="">Seçiniz...</option>
                       <option value="otel">Otel</option>
@@ -172,7 +219,7 @@ export default function TeklifAlPage() {
                         value={formData.quantity}
                         onChange={handleChange}
                         placeholder="Örn: 100 adet nevresim"
-                        className="w-full px-4 py-3 rounded-subtle border border-neutral-300 focus:border-brand-lilac focus:ring-1 focus:ring-brand-lilac outline-none"
+                        className="w-full px-4 py-3 rounded-subtle border border-neutral-300 focus:border-brand-gold focus:ring-1 focus:ring-brand-gold outline-none"
                       />
                     </div>
                     <div>
@@ -181,7 +228,7 @@ export default function TeklifAlPage() {
                         name="budget"
                         value={formData.budget}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 rounded-subtle border border-neutral-300 focus:border-brand-lilac focus:ring-1 focus:ring-brand-lilac outline-none"
+                        className="w-full px-4 py-3 rounded-subtle border border-neutral-300 focus:border-brand-gold focus:ring-1 focus:ring-brand-gold outline-none"
                       >
                         <option value="">Seçiniz...</option>
                         <option value="10k-25k">10.000 - 25.000 TL</option>
@@ -199,7 +246,7 @@ export default function TeklifAlPage() {
                       name="deadline"
                       value={formData.deadline}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-subtle border border-neutral-300 focus:border-brand-lilac focus:ring-1 focus:ring-brand-lilac outline-none"
+                      className="w-full px-4 py-3 rounded-subtle border border-neutral-300 focus:border-brand-gold focus:ring-1 focus:ring-brand-gold outline-none"
                     />
                   </div>
 
@@ -211,7 +258,7 @@ export default function TeklifAlPage() {
                       onChange={handleChange}
                       rows={5}
                       placeholder="Projenizle ilgili detayları paylaşın..."
-                      className="w-full px-4 py-3 rounded-subtle border border-neutral-300 focus:border-brand-lilac focus:ring-1 focus:ring-brand-lilac outline-none resize-none"
+                      className="w-full px-4 py-3 rounded-subtle border border-neutral-300 focus:border-brand-gold focus:ring-1 focus:ring-brand-gold outline-none resize-none"
                     />
                   </div>
                 </div>
@@ -237,10 +284,16 @@ export default function TeklifAlPage() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-brand-lilac text-white px-6 py-4 rounded-subtle hover:bg-brand-lilac-dark transition-colors font-medium disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-brand-gold text-white px-6 py-4 rounded-subtle hover:bg-brand-gold/90 transition-colors font-medium disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? 'Gönderiliyor...' : 'Teklif Talebini Gönder'}
               </button>
+
+              {responseMessage && (
+                <div className={`p-4 rounded-lg ${responseMessage.type === 'success' ? 'bg-green-50 text-green-800 border border-green-200' : 'bg-red-50 text-red-800 border border-red-200'}`}>
+                  <p className="text-sm">{responseMessage.text}</p>
+                </div>
+              )}
             </form>
           </div>
         </div>
