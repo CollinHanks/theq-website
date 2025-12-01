@@ -9,47 +9,56 @@ export const metadata = {
 export default function ReferanslarPage() {
   const projects = [
     {
-      title: "Mandarin Oriental Istanbul",
-      category: "Lüks Otel",
-      description: "120 oda için tam tekstil çözümü",
-      items: ["Nevresim Takımı", "Banyo Grubu", "Spa Tekstili"]
+      title: "Cratos Premium Hotel",
+      category: "Premium Otel",
+      description: "150 oda için premium yatak ve banyo tekstili",
+      items: ["Nevresim Takımı", "Banyo Grubu", "Bornoz & Terlik"]
     },
     {
-      title: "Mikla Restaurant",
+      title: "Anex Tour",
+      category: "Turizm & Konaklama",
+      description: "Otel zincirleri için toplu tekstil tedariki",
+      items: ["Yatak Grubu", "Havlu Seti", "Kurumsal Tekstil"]
+    },
+    {
+      title: "Köşebaşı Restaurant",
       category: "Fine Dining",
-      description: "Michelin yıldızlı restoran üniforma projesi",
-      items: ["Şef Üniforması", "Servis Ekibi", "Masa Tekstili"]
+      description: "Restoran zinciri için üniforma ve masa tekstili",
+      items: ["Şef & Personel Üniforması", "Masa Örtüsü", "Peçete Seti"]
     },
     {
-      title: "Six Senses Kaplankaya",
-      category: "Wellness Resort",
-      description: "Spa ve wellness tekstil tedariki",
-      items: ["Spa Bornoz", "Havlu Seti", "Terapi Örtüsü"]
+      title: "Four Seasons Istanbul",
+      category: "Lüks Otel",
+      description: "Süit ve executive odalar için özel tekstil",
+      items: ["Premium Nevresim", "Lüks Havlu", "Spa Bornoz"]
     },
     {
-      title: "Çırağan Palace",
-      category: "Tarihi Otel",
-      description: "Restorasyon sonrası tekstil yenileme",
-      items: ["Özel Tasarım Nevresim", "Lüks Havlu", "Süit Tekstili"]
+      title: "Hilton Garden Inn",
+      category: "Otel Zinciri",
+      description: "Standart oda tekstil paketleri",
+      items: ["Yatak Tekstili", "Banyo Grubu", "Dekoratif Yastık"]
     },
     {
-      title: "Soho House Istanbul",
-      category: "Boutique Club",
-      description: "Üye kulübü için tüm tekstil ihtiyaçları",
-      items: ["Yatak Grubu", "Restoran Üniforma", "Lounge Tekstili"]
-    },
-    {
-      title: "Nusr-Et Steakhouse",
-      category: "Restoran Zinciri",
-      description: "6 şube için standart üniforma üretimi",
-      items: ["Personel Üniforma", "Masa Düzeni", "Branding"]
+      title: "Ritz-Carlton",
+      category: "Luxury Hotel",
+      description: "Spa ve wellness merkezi tekstil çözümleri",
+      items: ["Spa Tekstili", "Masaj Örtüsü", "Premium Havlu"]
     }
   ]
 
   const clients = [
-    "Four Seasons", "Ritz-Carlton", "Shangri-La", "Hilton", "Raffles",
-    "Swissôtel", "Kempinski", "Park Hyatt", "St. Regis", "W Hotels",
-    "Edition Hotels", "Aman Resorts", "Bulgari Hotels", "Peninsula Hotels"
+    "Anex Tour",
+    "Cratos Premium Hotel",
+    "Köşebaşı Restaurant",
+    "Four Seasons",
+    "Ritz-Carlton",
+    "Hilton",
+    "Swissôtel",
+    "Raffles",
+    "Kempinski",
+    "Park Hyatt",
+    "Shangri-La",
+    "Marriott"
   ]
 
   return (
@@ -62,7 +71,7 @@ export default function ReferanslarPage() {
               Referanslarımız
             </h1>
             <p className="text-lg md:text-xl text-brand-stone">
-              Türkiye ve dünya çapında 200+ kurumsal müşteriye hizmet vermenin gururunu yaşıyoruz. 
+              Türkiye ve dünya çapında 200+ kurumsal müşteriye hizmet vermenin gururunu yaşıyoruz.
               Her proje, kalite ve güven üzerine kurulu ortaklığımızın bir göstergesi.
             </p>
           </div>
@@ -74,19 +83,19 @@ export default function ReferanslarPage() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto text-center">
             <div>
-              <div className="font-playfair text-4xl md:text-5xl text-brand-lilac mb-2">200+</div>
+              <div className="font-playfair text-4xl md:text-5xl text-brand-gold mb-2">200+</div>
               <p className="text-sm text-brand-stone">Kurumsal Müşteri</p>
             </div>
             <div>
-              <div className="font-playfair text-4xl md:text-5xl text-brand-lilac mb-2">500+</div>
+              <div className="font-playfair text-4xl md:text-5xl text-brand-gold mb-2">500+</div>
               <p className="text-sm text-brand-stone">Başarılı Proje</p>
             </div>
             <div>
-              <div className="font-playfair text-4xl md:text-5xl text-brand-lilac mb-2">%98</div>
+              <div className="font-playfair text-4xl md:text-5xl text-brand-gold mb-2">%98</div>
               <p className="text-sm text-brand-stone">Müşteri Memnuniyeti</p>
             </div>
             <div>
-              <div className="font-playfair text-4xl md:text-5xl text-brand-lilac mb-2">27</div>
+              <div className="font-playfair text-4xl md:text-5xl text-brand-gold mb-2">27</div>
               <p className="text-sm text-brand-stone">Farklı Ülke</p>
             </div>
           </div>
@@ -104,7 +113,7 @@ export default function ReferanslarPage() {
                   <span className="text-neutral-500 text-sm">[{project.title}]</span>
                 </div>
                 <div className="p-5">
-                  <div className="text-xs text-brand-lilac font-medium mb-2">{project.category}</div>
+                  <div className="text-xs text-brand-gold font-medium mb-2">{project.category}</div>
                   <h3 className="font-playfair text-xl mb-2 text-brand-charcoal">{project.title}</h3>
                   <p className="text-sm text-brand-stone mb-3">{project.description}</p>
                   <div className="flex flex-wrap gap-2">
@@ -127,40 +136,10 @@ export default function ReferanslarPage() {
           <h2 className="font-playfair text-3xl md:text-4xl text-center mb-8">İşbirliği Yaptığımız Markalar</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 max-w-6xl mx-auto">
             {clients.map((client, index) => (
-              <div key={index} className="bg-brand-cream rounded-lg p-4 flex items-center justify-center h-20 hover:bg-brand-lilac-light transition-colors">
+              <div key={index} className="bg-brand-cream rounded-lg p-4 flex items-center justify-center h-20 hover:bg-brand-gold-light transition-colors">
                 <span className="text-brand-stone text-sm font-medium text-center">{client}</span>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Müşteri Yorumları - KOMPAKT */}
-      <section className="py-10 md:py-12 bg-brand-cream">
-        <div className="container mx-auto px-4 md:px-6">
-          <h2 className="font-playfair text-3xl md:text-4xl text-center mb-8">Müşterilerimiz Ne Diyor</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            <div className="bg-white p-6 rounded-lg">
-              <p className="text-sm text-brand-stone mb-4 italic">
-                "The Q Atelier ile çalışmak, kalite standartlarımızı bir üst seviyeye taşıdı. Hem ürün kalitesi hem de hizmet anlayışları mükemmel."
-              </p>
-              <div className="font-semibold text-sm">Alper K.</div>
-              <div className="text-xs text-brand-stone">Genel Müdür, Lüks Otel</div>
-            </div>
-            <div className="bg-white p-6 rounded-lg">
-              <p className="text-sm text-brand-stone mb-4 italic">
-                "Restoran zincimizin tüm şubelerinde standart kaliteyi yakalamak The Q sayesinde mümkün oldu. Teşekkürler!"
-              </p>
-              <div className="font-semibold text-sm">Mehmet Y.</div>
-              <div className="text-xs text-brand-stone">İşletme Sahibi, Restoran Zinciri</div>
-            </div>
-            <div className="bg-white p-6 rounded-lg">
-              <p className="text-sm text-brand-stone mb-4 italic">
-                "Spa tekstillerimiz için aradığımız kalite ve konforu The Q Atelier'de bulduk. Misafir memnuniyeti arttı."
-              </p>
-              <div className="font-semibold text-sm">Ayşe T.</div>
-              <div className="text-xs text-brand-stone">Spa Direktörü, Wellness Resort</div>
-            </div>
           </div>
         </div>
       </section>
@@ -175,7 +154,7 @@ export default function ReferanslarPage() {
             Başarılı projelerimize katılın, markanızı kaliteli tekstillerle güçlendirin.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/teklif-al" className="bg-brand-lilac text-white px-10 py-4 rounded-subtle hover:bg-brand-lilac-light transition-colors font-medium">
+            <Link href="/teklif-al" className="bg-brand-gold text-white px-10 py-4 rounded-subtle hover:bg-brand-gold-light transition-colors font-medium">
               Teklif Alın
             </Link>
             <Link href="/sunum" className="border-2 border-white text-white px-10 py-4 rounded-subtle hover:bg-white hover:text-brand-charcoal transition-colors font-medium">
