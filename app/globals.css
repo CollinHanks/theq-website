@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-brand-cream text-brand-charcoal;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  /* Vignette effect for hero banner - darkens edges for better text readability */
+  .bg-radial-vignette {
+    background: radial-gradient(
+      ellipse at center,
+      transparent 0%,
+      transparent 50%,
+      rgba(0, 0, 0, 0.15) 100%
+    );
+  }
+  
+  /* Smooth scroll behavior for the entire site */
+  html {
+    scroll-behavior: smooth;
+  }
+}

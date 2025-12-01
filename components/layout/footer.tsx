@@ -1,0 +1,132 @@
+'use client'
+
+import Link from 'next/link'
+import Image from 'next/image'
+import { useState } from 'react'
+import { Mail, MapPin, Phone } from 'lucide-react'
+
+export default function Footer() {
+  const [email, setEmail] = useState('')
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    
+    // TODO: E-bülten abonelik mantığını buraya ekleyin
+    
+    setTimeout(() => {
+      setIsSubmitting(false)
+      setEmail('')
+      alert('Bültenimize abone olduğunuz için teşekkürler!')
+    }, 1000)
+  }
+
+  return (
+    <footer className="bg-brand-charcoal text-white py-10 mt-12">
+      <div className="container mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 lg:gap-5">
+          {/* Logo & Açıklama - 4 columns */}
+          <div className="lg:col-span-4">
+            <div className="relative h-12 w-44 mb-3">
+              <Image
+                src="/images/logo-white.png"
+                alt="The Q Atelier - Otel Tekstili"
+                fill
+                className="object-contain object-left"
+              />
+            </div>
+            <p className="text-sm text-neutral-300 leading-relaxed pr-4">
+              2018'den beri otelcilik sektörünün tekstil partneri. Premium otel nevresim, restoran üniforma ve lüks spa tekstilleri üretiyoruz. Türkiye'nin dört bir yanındaki 200+ kurumsal müşterimize hizmet veriyoruz.
+            </p>
+          </div>
+          
+          {/* Ürünler - 2 columns */}
+          <div className="lg:col-span-2">
+            <h4 className="font-semibold mb-3 text-base">Ürünler</h4>
+            <ul className="space-y-1.5 text-sm text-neutral-300">
+              <li><Link href="/urunler" className="hover:text-brand-lilac transition-colors">Ürün Kataloğu</Link></li>
+              <li><Link href="/hizmetler" className="hover:text-brand-lilac transition-colors">Hizmetler</Link></li>
+              <li><Link href="/referanslar" className="hover:text-brand-lilac transition-colors">Referanslar</Link></li>
+            </ul>
+          </div>
+          
+          {/* Kurumsal - 2 columns */}
+          <div className="lg:col-span-2">
+            <h4 className="font-semibold mb-3 text-base">Kurumsal</h4>
+            <ul className="space-y-1.5 text-sm text-neutral-300">
+              <li><Link href="/hakkimizda" className="hover:text-brand-lilac transition-colors">Hakkımızda</Link></li>
+              <li><Link href="/sunum" className="hover:text-brand-lilac transition-colors">Şirket Sunumu</Link></li>
+              <li><Link href="/blog" className="hover:text-brand-lilac transition-colors">Blog</Link></li>
+              <li><Link href="/teklif-al" className="hover:text-brand-lilac transition-colors">Teklif Al</Link></li>
+            </ul>
+          </div>
+          
+          {/* İletişim & Bülten - 4 columns */}
+          <div className="lg:col-span-4">
+            <h4 className="font-semibold mb-3 text-base">Bize Ulaşın</h4>
+            
+            {/* İletişim Bilgileri */}
+            <div className="space-y-2 mb-4">
+              <div className="flex items-start gap-2 text-sm text-neutral-300">
+                <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0 text-brand-lilac" />
+                <span>Bomonti, İstanbul, 34000, Türkiye</span>
+              </div>
+              <div className="flex items-start gap-2 text-sm text-neutral-300">
+                <Mail className="w-4 h-4 mt-0.5 flex-shrink-0 text-brand-lilac" />
+                <Link href="mailto:hello@theqatelier.com" className="hover:text-brand-lilac transition-colors">
+                  hello@theqatelier.com
+                </Link>
+              </div>
+              <div className="flex items-start gap-2 text-sm text-neutral-300">
+                <Phone className="w-4 h-4 mt-0.5 flex-shrink-0 text-brand-lilac" />
+                <Link href="/iletisim" className="hover:text-brand-lilac transition-colors">
+                  İletişim Formu
+                </Link>
+              </div>
+            </div>
+
+            {/* E-Bülten Aboneliği */}
+            <div className="mt-4">
+              <p className="text-xs text-neutral-400 mb-2">Kampanya ve yeniliklerden haberdar olun</p>
+              <form onSubmit={handleSubscribe} className="flex gap-2">
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="E-posta adresiniz"
+                  required
+                  className="flex-1 px-3 py-2 text-sm bg-neutral-800 border border-neutral-700 rounded-subtle 
+                           text-white placeholder-neutral-500
+                           focus:outline-none focus:border-brand-lilac focus:ring-1 focus:ring-brand-lilac
+                           transition-colors"
+                />
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="px-4 py-2 text-sm font-medium bg-brand-lilac text-white rounded-subtle
+                           hover:bg-brand-lilac-dark transition-colors
+                           disabled:opacity-50 disabled:cursor-not-allowed
+                           whitespace-nowrap"
+                >
+                  {isSubmitting ? 'Gönderiliyor...' : 'Abone Ol'}
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+        
+        {/* Alt Bar */}
+        <div className="border-t border-neutral-800 mt-6 pt-5 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-xs text-neutral-400 text-center md:text-left">
+            © 2025 The Q Atelier. Tüm hakları saklıdır. Türkiye'de tutkuyla üretilmektedir.
+          </p>
+          <div className="flex gap-4 text-xs text-neutral-400">
+            <Link href="/gizlilik" className="hover:text-brand-lilac transition-colors">Gizlilik Politikası</Link>
+            <Link href="/kullanim-sartlari" className="hover:text-brand-lilac transition-colors">Kullanım Şartları</Link>
+          </div>
+        </div>
+      </div>
+    </footer>
+  )
+}
